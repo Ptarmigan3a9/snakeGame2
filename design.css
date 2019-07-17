@@ -1,0 +1,15 @@
+canvas{
+    padding: 4px 450px;
+}
+header{
+    text-align: center;
+    font-family: cursive;
+    font-size: 25px;
+    padding: 0px;
+}
+footer{
+    text-align: center;
+    font-family: Georgia, 'Times New Roman', Times, serif black;
+    font-style: italic;
+    padding-top: 0px;
+}
