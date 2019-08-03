@@ -4,6 +4,14 @@ window.onload = function () {
     var title = document.getElementById('h1');
     document.addEventListener('keydown', keyPush);
 
+    var player1 = document.getElementById("p1");
+    var player2 = document.getElementById("p2");
+    var pointPlayer1 = 0;
+    var pointPlayer2 = 0;
+    var maior1 = 0;
+    var maior2 = 0;
+    var aux = 0;
+
     setInterval(game, 120);
 
     const vel = 1;
@@ -54,6 +62,9 @@ window.onload = function () {
                 if (cont > 0) {
                     window.alert('Você perdeu!');
                     cont = 0;
+                    aux++;
+                    pointPlayer1 = 0;
+                    pointPlayer2 = 0;
                 }
             }
         }
@@ -65,6 +76,19 @@ window.onload = function () {
             tail++;
             appleX = Math.floor(Math.random() * countBlocks);
             appleY = Math.floor(Math.random() * countBlocks);
+            if (aux % 2 == 0) {
+                pointPlayer1++;
+                if (pointPlayer1 > maior1) {
+                    maior1 = pointPlayer1;
+                    player1.innerHTML = pointPlayer1;
+                }
+            } else {
+                pointPlayer2++;
+                if (pointPlayer2 > maior2) {
+                    maior2 = pointPlayer2;
+                    player2.innerHTML = pointPlayer2;
+                }
+            }
         }
     }
     function keyPush(event) {
